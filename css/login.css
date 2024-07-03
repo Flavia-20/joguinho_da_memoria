@@ -14,8 +14,13 @@
   margin-bottom: 50px;
 }
 
-.login__header img {
-  width: 150px;
+.login__header__img__brain{
+  width: 20%;
+
+}
+
+.login__header__img__sk8{
+  width: 40%;
 }
 
 .login__header h1 {
