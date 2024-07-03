@@ -58,11 +58,11 @@ const checkCards = () => {
 
     if(firstCharacter === secondCharacter){
 
-        firstCard.classList.add('disabled-card');
-        secondCard.classList.add('disabled-card');
+        firstCard.firstChild.classList.add('disabled-card');
+        secondCard.firstChild.classList.add('disabled-card');
 
-        let firstCard = '';
-        let secondCard = '';
+        firstCard = '';
+        secondCard = '';
 
         checkEndGame();
 
@@ -72,8 +72,8 @@ const checkCards = () => {
             firstCard.classList.remove('reveal-card');
             secondCard.classList.remove('reveal-card');
 
-            let firstCard = '';
-            let secondCard = '';
+            firstCard = '';
+            secondCard = '';
 
         }, 500); 
     }
