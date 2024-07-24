@@ -34,6 +34,49 @@ const personagens =[
     "simboloNaruto"
 ]
 
+function sweetAlert2(){
+    Swal.fire({
+        title: `Vamos jogar de novo ${spanPlayer.innerHTML}?`,
+        tex: "#ff0000",
+        width: 500,
+        padding: "1em",
+        color: "#00FF00",
+        confirmButtonText: "Vamos!!",
+        confirmButtonColor: "#00FF00",
+        backdrop: `
+            rgba(0,0,123,0.4)
+            url("../images/cat-nyan-cat.gif")
+            left top
+            no-repeat
+        `
+    }).then(() =>{
+        grid.innerHTML = "";
+        timer.innerHTML = "";
+        startTimer();
+        loadGame();
+    });  
+};
+
+function sweetAlertGanhou(){
+    Swal.fire({
+        title: `Parabéns, ${spanPlayer.innerHTML}!\n Seu tempo foi de: ${timer.innerHTML}`,
+        tex: "#ff0000",
+        width: 500,
+        padding: "1em",
+        color: "#00FF00",
+        confirmButtonText: "ebaa!!",
+        confirmButtonColor: "#00FF00",
+        backdrop: `
+            rgba(0,0,123,0.4)
+            url("../images/cat-nyan-cat.gif")
+            left top
+            no-repeat
+        `   
+    }).then(() => {
+        sweetAlert2();
+    });
+}
+
 const creatEelement = (tag, className) => {
     const element = document.createElement(tag);
     element.className = className;
@@ -48,7 +91,7 @@ const checkEndGame = () => {
 
     if(disabledCards.length === 20){
         clearInterval(this.loop);
-        alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
+        sweetAlertGanhou();
     }
 }
 
@@ -135,14 +178,11 @@ const startTimer = () => {
       timer.innerHTML = currentTime + 1;
     }, 1000);
   
-  }
+  };
   
   window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem('player');
     startTimer();
     loadGame();
-  }
-
-
-
-
+    
+    }
