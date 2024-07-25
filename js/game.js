@@ -186,6 +186,5 @@ const startTimer = () => {
     spanPlayer.innerHTML = localStorage.getItem('player');
     startTimer();
     loadGame();
-    sweetAlertGanhou()
     
     }
