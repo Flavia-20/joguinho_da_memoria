@@ -38,7 +38,7 @@ function sweetAlert2(){
     Swal.fire({
         title: `Vamos jogar de novo ${spanPlayer.innerHTML}?`,
         tex: "#ff0000",
-        width: 500,
+        width: 800,
         padding: "1em",
         color: "#00FF00",
         confirmButtonText: "Vamos!!",
@@ -48,6 +48,7 @@ function sweetAlert2(){
             url("../images/cat-nyan-cat.gif")
             left top
             no-repeat
+            200
         `
     }).then(() =>{
         grid.innerHTML = "";
@@ -61,7 +62,7 @@ function sweetAlertGanhou(){
     Swal.fire({
         title: `Parabéns, ${spanPlayer.innerHTML}!\n Seu tempo foi de: ${timer.innerHTML}`,
         tex: "#ff0000",
-        width: 500,
+        width: 800,
         padding: "1em",
         color: "#00FF00",
         confirmButtonText: "ebaa!!",
@@ -71,6 +72,7 @@ function sweetAlertGanhou(){
             url("../images/cat-nyan-cat.gif")
             left top
             no-repeat
+            
         `   
     }).then(() => {
         sweetAlert2();
@@ -184,5 +186,6 @@ const startTimer = () => {
     spanPlayer.innerHTML = localStorage.getItem('player');
     startTimer();
     loadGame();
+    sweetAlertGanhou()
     
     }
